@@ -86,9 +86,9 @@ To add support for a new Multicopter Matrix frame type (i.e. a frame with downwa
 
 - Decide on a name for the frame and add a new entry into either the motor_frame_class and/or motor_frame_type enums found in `AP_Motors/AP_Motors_Class.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_Motors_Class.h#L32>`__
 - Add the same number(s) from the above step to the `FRAME_CLASS <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L848>`__ and/or `FRAME_TYPE <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L361>`__ parameters descriptions
-- Add a new case to the `AP_MotorsMatrix::setup_motors() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_MotorsMatrix.cpp#L466>`__ for the new frame class and/or frame type
+- Add a new case to the `AP_MotorsMatrix::setup_motors() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_MotorsMatrix.cpp#L1247>`__ for the new frame class and/or frame type
 
-  - Use AP_MotorsMatrix::add_motor() or `AP_MotorsMatrix::add_motor_raw() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_MotorsMatrix.h#L62>`__ functions to set the roll, pitch and yaw factors for each motor on the vehicle.  These factors are multiplied by the high level roll, pitch and yaw input from the attitude controllers and the result is then output to the motors.
+  - Use AP_MotorsMatrix::add_motor() or `AP_MotorsMatrix::add_motor_raw() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_MotorsMatrix.cpp#L500>`__ functions to set the roll, pitch and yaw factors for each motor on the vehicle.  These factors are multiplied by the high level roll, pitch and yaw input from the attitude controllers and the result is then output to the motors.
   - The above add_motor function's testing_order argument specifies the order in which the motors should spin when the user initiates a motor test.  Normally each motor's testing order should be relative to its position on the frame in a clockwise direction.
   - set success = true at the bottom of the case to alert the AP_Motors initialisation code that the frame has been setup
 
