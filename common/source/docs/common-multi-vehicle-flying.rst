@@ -61,7 +61,7 @@ including the tracker should appear on the Map.
 
 Controlling the vehicle depends upon the GCS used but if using the
 *Mission Planner*, "Ctrl-X" pulls up a drop-down selector which allows
-the user to choose which vehicle to control.
+the user to choose which vehicle to control.  (the ctrl-x feature has been depricated)
 
 If using Copter, switch each vehicle into GUIDED mode.  On the MP's map,
 right-mouse-button-click and select "Takeoff" and input 2m to get the
